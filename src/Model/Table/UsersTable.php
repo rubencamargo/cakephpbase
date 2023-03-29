@@ -95,6 +95,15 @@ class UsersTable extends Table
             ->notEmptyString('password');
 
         $validator
+            ->scalar('retype_password')
+            ->maxLength('retype_password', 255)
+            ->requirePresence('retype_password', 'create')
+            ->notEmptyString('retype_password');
+
+        $validator
+            ->sameAs('retype_password', 'password', __('Password match failed.'));
+
+        $validator
             ->scalar('country')
             ->maxLength('country', 3)
             ->allowEmptyString('country');
