@@ -39,8 +39,9 @@ class UsersController extends AppController
                 ]);
             } else {
                 $redirect = $this->request->getQuery('redirect', [
+                    'prefix' => false,
                     'controller' => 'Pages',
-                    //'action' => 'index',
+                    'action' => 'display',
                 ]);
             }
 
