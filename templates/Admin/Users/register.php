@@ -1,6 +1,11 @@
 <div class="register">
+    <?= $this->Flash->render() ?>
+
+    <h3>Register</h3>
     <?= $this->Form->create($user) ?>
     
+    <h4><?= __('Please enter your data') ?></h4>
+
     <?php
         //echo $this->Form->control('role_id', ['options' => $roles]);
         echo $this->Form->control('name', ['placeholder' => __('Name'), 'label' => false, 'autocomplete' => 'off']);
@@ -11,15 +16,10 @@
         echo $this->Form->control('retype_password', ['type' => 'password', 'placeholder' => __('Retype Password'), 'label' => false, 'autocomplete' => 'off']);
     ?>
     
-    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->button(__('Register')) ?>
 
-    <?php
-    echo $this->Html->link(
-        'Login',
-        '/users/login',
-        ['class' => 'button']
-    );
-    ?>
+    <?= $this->Html->link(__('Login'), '/admin/users/login', ['class' => 'button']); ?>
+
     <?= $this->Form->end() ?>
 </div>
 
