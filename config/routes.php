@@ -88,4 +88,9 @@ return static function (RouteBuilder $routes) {
      * });
      * ```
      */
+
+    $routes->prefix('Admin', function (RouteBuilder $routes) {
+        $routes->connect('/', ['controller' => 'Users', 'action' => 'index']);
+        $routes->fallbacks(DashedRoute::class);
+    });
 };
