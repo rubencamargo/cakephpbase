@@ -4,6 +4,8 @@ declare(strict_types=1);
 namespace App\Controller\Admin;
 
 use App\Controller\AppController;
+use EmailQueue\EmailQueue;
+//use Cake\Mailer\Mailer;
 
 /**
  * Users Controller
@@ -62,8 +64,6 @@ class UsersController extends AppController
 
     public function register()
     {
-        $this->Authorization->skipAuthorization();
-
         // Envío de correo con Mailer de CakePHP.
         //$mailer = new Mailer();
         //$mailer

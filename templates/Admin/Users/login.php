@@ -13,6 +13,6 @@
     
     <?= $this->Form->button(__('Login'), ['class' => 'btn btn-primary']) ?>
     
-    <?php echo $this->Html->link('Register', '/users/register', ['class' => 'btn btn-secondary']); ?>
+    <?php echo $this->Html->link('Register', '/admin/users/register', ['class' => 'btn btn-secondary']); ?>
     <?= $this->Form->end() ?>
 </div>

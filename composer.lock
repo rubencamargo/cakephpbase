@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e2cf164e593703fd4108458a21bdd711",
+    "content-hash": "dc2af896f56270b2e56fa5b74d7dd345",
     "packages": [
         {
             "name": "cakephp/authentication",
@@ -674,6 +674,60 @@
                 }
             ],
             "time": "2021-11-16T10:29:06+00:00"
+        },
+        {
+            "name": "lorenzo/cakephp-email-queue",
+            "version": "5.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lorenzo/cakephp-email-queue.git",
+                "reference": "6eaf1f16f02d8b0f6c2bf48cbdf371e53f1a4993"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lorenzo/cakephp-email-queue/zipball/6eaf1f16f02d8b0f6c2bf48cbdf371e53f1a4993",
+                "reference": "6eaf1f16f02d8b0f6c2bf48cbdf371e53f1a4993",
+                "shasum": ""
+            },
+            "require": {
+                "cakephp/cakephp": "^4.4"
+            },
+            "require-dev": {
+                "cakephp/cakephp-codesniffer": "^4.0",
+                "cakephp/migrations": "^3.7",
+                "php-coveralls/php-coveralls": "^2.1",
+                "phpunit/phpunit": "^8.5.23"
+            },
+            "type": "cakephp-plugin",
+            "autoload": {
+                "psr-4": {
+                    "EmailQueue\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "José Lorenzo Rodríguez",
+                    "role": "Author"
+                }
+            ],
+            "description": "Queue, preview and and send emails stored in the database",
+            "homepage": "https://github.com/lorenzo/cakephp-email-queue",
+            "keywords": [
+                "cakephp",
+                "cron",
+                "email",
+                "preview",
+                "queue"
+            ],
+            "support": {
+                "issues": "https://github.com/lorenzo/cakephp-email-queue/issues",
+                "source": "https://github.com/lorenzo/cakephp-email-queue/tree/5.1.0"
+            },
+            "time": "2022-12-16T11:48:16+00:00"
         },
         {
             "name": "mobiledetect/mobiledetectlib",
