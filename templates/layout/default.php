@@ -31,12 +31,13 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 
         <?= $this->Html->meta('icon') ?>
 
-        <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+        <!-- <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet"> -->
 
-        <?= $this->Html->css(['normalize.min', 'milligram.min', 'cake']) ?>
-        <?= $this->Html->css(['bootstrap/bootstrap.min']) ?>
+        <?php //echo $this->Html->css(['normalize.min', 'milligram.min', 'cake']) ?>
+        
+        <?= $this->Html->css(['bootstrap/bootstrap.min', 'styles']) ?>
 
-        <?= $this->Html->script([/*'jquery-3.6.4.min', */'bootstrap/bootstrap.min'], ['block' => 'js']) ?>
+        <?= $this->Html->script(['jquery-3.6.4.min', 'bootstrap/bootstrap.bundle.min', 'scripts'], ['block' => 'js']) ?>
 
         <?= $this->fetch('meta') ?>
         <?= $this->fetch('css') ?>
@@ -44,6 +45,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     </head>
 
     <body>
+        <?= $this->element('navbar'); ?>
+
         <nav class="top-nav">
             <div class="top-nav-title">
                 <a href="<?= $this->Url->build('/') ?>"><span>Cake</span>PHP</a>
@@ -70,10 +73,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             </div>
         </main>
 
-        <footer>
-
-        </footer>
-
+        <?= $this->element('footer'); ?>
+        
         <?= $this->fetch('js') ?>
     </body>
 </html>
