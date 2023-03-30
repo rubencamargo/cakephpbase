@@ -42,6 +42,7 @@ class User extends Entity
         'phone' => true,
         'password' => true,
         'country' => true,
+        'picture' => true,
         'active' => true,
         'created' => true,
         'modified' => true,

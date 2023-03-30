@@ -109,6 +109,19 @@ class UsersTable extends Table
             ->allowEmptyString('country');
 
         $validator
+            ->allowEmptyFile('picture')
+            ->add('picture', [
+                'mimeType' => [
+                    'rule' => ['mimeType', ['image/jpg', 'image/png', 'image/jpeg']],
+                    'message' => 'Please upload only jpg or png.'
+                ],
+                'fileSize' => [
+                    'rule' => ['fileSize', '<=', '1MB'],
+                    'message' => 'Image file size must be less than 1MB.'
+                ]
+            ]);
+
+        $validator
             ->boolean('active')
             ->notEmptyString('active');
 

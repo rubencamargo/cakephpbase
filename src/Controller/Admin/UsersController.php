@@ -151,6 +151,20 @@ class UsersController extends AppController
 
         if ($this->request->is(['patch', 'post', 'put'])) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
+            
+            // Save and upload image
+            if ((!$user->getErrors()) && ($this->request->getData('picture')->getClientFilename() != '')) {
+                $picture = $this->request->getData('picture');
+                $user->picture_name = time() . '_' . $picture->getClientFilename();
+                $user->picture_type = $picture->getClientMediaType();
+                $user->picture_size = $picture->getSize();
+                $targetPath = WWW_ROOT . 'img' . DS . 'pictures' . DS . $user->picture_name;
+                
+                if ($user->picture_name) {
+                    $picture->moveTo($targetPath);
+                }
+            }
+
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('The user has been saved.'));
                 return $this->redirect(['action' => 'index']);

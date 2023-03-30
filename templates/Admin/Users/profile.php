@@ -15,7 +15,7 @@
 
     <div class="column-responsive column-80">
         <div class="users form content">
-            <?= $this->Form->create($user) ?>
+            <?= $this->Form->create($user, ['type' => 'file']) ?>
             <fieldset>
                 <legend><?= __('Edit User') ?></legend>
                 <?php
@@ -25,6 +25,7 @@
                     echo $this->Form->control('email', ['readonly' => 'readonly']);
                     echo $this->Form->control('phone');
                     echo $this->Form->control('password', ['value' => '']);
+                    echo $this->Form->control('picture', ['type' => 'file']);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
