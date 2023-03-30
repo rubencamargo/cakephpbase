@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
@@ -16,51 +17,63 @@
 
 $cakeDescription = 'CakePHP: the rapid development php framework';
 ?>
+
 <!DOCTYPE html>
 <html>
-<head>
-    <?= $this->Html->charset() ?>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>
-        <?= $cakeDescription ?>:
-        <?= $this->fetch('title') ?>
-    </title>
-    <?= $this->Html->meta('icon') ?>
+    <head>
+        <?= $this->Html->charset() ?>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <title>
+            <?= $cakeDescription ?>:
+            <?= $this->fetch('title') ?>
+        </title>
 
-    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+        <?= $this->Html->meta('icon') ?>
 
-    <?= $this->Html->css(['normalize.min', 'milligram.min', 'cake']) ?>
+        <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
 
-    <?= $this->fetch('meta') ?>
-    <?= $this->fetch('css') ?>
-    <?= $this->fetch('script') ?>
-</head>
-<body>
-    <nav class="top-nav">
-        <div class="top-nav-title">
-            <a href="<?= $this->Url->build('/') ?>"><span>Cake</span>PHP</a>
-        </div>
-        <div class="top-nav-links">
-            <!--
-            <a target="_blank" rel="noopener" href="https://book.cakephp.org/4/">Documentation</a>
-            <a target="_blank" rel="noopener" href="https://api.cakephp.org/">API</a>
-            -->
-            
-            <?php
-            if ($this->request->getSession()->check('Auth')) {
-                echo $this->Html->link($this->request->getSession()->read('Auth.name') . ' ' . $this->request->getSession()->read('Auth.lastname'), ['prefix' => 'Admin', 'controller' => 'Users', 'action' => 'profile']);
-                echo $this->Html->link("Logout", ['prefix' => 'Admin', 'controller' => 'Users', 'action' => 'logout']);
-            }
-            ?>
-        </div>
-    </nav>
-    <main class="main">
-        <div class="container">
-            <?= $this->Flash->render() ?>
-            <?= $this->fetch('content') ?>
-        </div>
-    </main>
-    <footer>
-    </footer>
-</body>
+        <?= $this->Html->css(['normalize.min', 'milligram.min', 'cake']) ?>
+        <?= $this->Html->css(['bootstrap/bootstrap.min']) ?>
+
+        <?= $this->Html->script([/*'jquery-3.6.4.min', */'bootstrap/bootstrap.min'], ['block' => 'js']) ?>
+
+        <?= $this->fetch('meta') ?>
+        <?= $this->fetch('css') ?>
+        <?= $this->fetch('script') ?>
+    </head>
+
+    <body>
+        <nav class="top-nav">
+            <div class="top-nav-title">
+                <a href="<?= $this->Url->build('/') ?>"><span>Cake</span>PHP</a>
+            </div>
+            <div class="top-nav-links">
+                <!--
+                <a target="_blank" rel="noopener" href="https://book.cakephp.org/4/">Documentation</a>
+                <a target="_blank" rel="noopener" href="https://api.cakephp.org/">API</a>
+                -->
+
+                <?php
+                if ($this->request->getSession()->check('Auth')) {
+                    echo $this->Html->link($this->request->getSession()->read('Auth.name') . ' ' . $this->request->getSession()->read('Auth.lastname'), ['prefix' => 'Admin', 'controller' => 'Users', 'action' => 'profile']);
+                    echo $this->Html->link("Logout", ['prefix' => 'Admin', 'controller' => 'Users', 'action' => 'logout']);
+                }
+                ?>
+            </div>
+        </nav>
+
+        <main class="main">
+            <div class="container">
+                <?= $this->Flash->render() ?>
+                <?= $this->fetch('content') ?>
+            </div>
+        </main>
+
+        <footer>
+
+        </footer>
+
+        <?= $this->fetch('js') ?>
+    </body>
 </html>
