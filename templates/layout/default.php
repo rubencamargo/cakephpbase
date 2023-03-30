@@ -47,16 +47,16 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <body>
         <?= $this->element('navbar'); ?>
 
+        <!--
         <nav class="top-nav">
             <div class="top-nav-title">
                 <a href="<?= $this->Url->build('/') ?>"><span>Cake</span>PHP</a>
             </div>
+
             <div class="top-nav-links">
-                <!--
                 <a target="_blank" rel="noopener" href="https://book.cakephp.org/4/">Documentation</a>
                 <a target="_blank" rel="noopener" href="https://api.cakephp.org/">API</a>
-                -->
-
+                
                 <?php
                 if ($this->request->getSession()->check('Auth')) {
                     echo $this->Html->link($this->request->getSession()->read('Auth.name') . ' ' . $this->request->getSession()->read('Auth.lastname'), ['prefix' => 'Admin', 'controller' => 'Users', 'action' => 'profile']);
@@ -65,6 +65,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                 ?>
             </div>
         </nav>
+        -->
 
         <main class="main">
             <div class="container">
