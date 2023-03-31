@@ -1,3 +1,4 @@
+<!-- Paginator template in /config/paginator-templates.php -->
 <nav aria-label="Page navigation">
     <ul class="pagination justify-content-center">
         <?= $this->Paginator->first('<< ' . __('first'), ['class' => 'page-item']) ?>
