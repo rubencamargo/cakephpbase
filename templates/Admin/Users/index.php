@@ -35,7 +35,11 @@
                         <td><?= h($user->email) ?></td>
                         <td><?= h($user->phone) ?></td>
                         <td><?= h($user->country) ?></td>
-                        <td><?= h($user->active) ?></td>
+                        <td>
+                            <?php //echo h($user->active) ?>
+                            <?php //h($user->active) ? __('Yes') : __('No'); ?>
+                            <?= $this->Form->postLink(h($user->active) ? __('Yes') : __('No'), ['action' => 'changeStatus', $user->id, $user->active], ['title' => __('Change status'), 'confirm' => __('Are you sure you want to {0}?', h($user->active) ? __('Deactivate') : __('Activate'))]) ?>
+                        </td>
                         <td><?= h($user->created) ?></td>
                         <td><?= h($user->modified) ?></td>
                         

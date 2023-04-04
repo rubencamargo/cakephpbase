@@ -271,4 +271,20 @@ class UsersController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+    public function changeStatus($id = null, $status = null)
+    {
+        $this->request->allowMethod(['post', 'delete']);
+        $user = $this->Users->get($id);
+        
+        $user->active = !$status;
+        
+        if ($this->Users->save($user)) {
+            $this->Flash->success(__('The user has been saved.'));
+        } else {
+            $this->Flash->error(__('The user could not be saved. Please, try again.'));
+        }
+        
+        return $this->redirect($this->referer());
+    }
 }
