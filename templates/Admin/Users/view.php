@@ -14,10 +14,11 @@
             <?= $this->Html->link(__('New User'), ['action' => 'add'], ['class' => 'side-nav-item']) ?>
         </div>
     </aside>
+
     <div class="column-responsive column-80">
         <div class="users view content">
             <h3><?= h($user->name) ?></h3>
-            <table>
+            <table class="table">
                 <tr>
                     <th><?= __('Role') ?></th>
                     <td><?= $user->has('role') ? $this->Html->link($user->role->name, ['controller' => 'Roles', 'action' => 'view', $user->role->id]) : '' ?></td>
