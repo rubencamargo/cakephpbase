@@ -8,16 +8,10 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <span data-feather="file" class="align-text-bottom"></span>
-                    Roles
-                </a>
+                <?php echo $this->Html->link('Roles', '/admin/roles', ['class' => 'nav-link']); ?>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <span data-feather="shopping-cart" class="align-text-bottom"></span>
-                    Users
-                </a>
+                <?php echo $this->Html->link('Users', '/admin/users', ['class' => 'nav-link']); ?>
             </li>
         </ul>
     </div>
