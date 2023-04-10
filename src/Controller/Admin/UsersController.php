@@ -27,6 +27,8 @@ class UsersController extends AppController
     {
         $this->request->allowMethod(['get', 'post']);
         
+        $this->viewBuilder()->setLayout('extern');
+
         $result = $this->Authentication->getResult();
         // regardless of POST or GET, redirect if user is logged in
         if ($result && $result->isValid()) {
@@ -47,6 +49,7 @@ class UsersController extends AppController
 
             return $this->redirect($redirect);
         }
+        
         // display error if user submitted and authentication failed
         if ($this->request->is('post') && !$result->isValid()) {
             $this->Flash->error(__('Invalid username or password'));
@@ -103,6 +106,8 @@ class UsersController extends AppController
         EmailQueue::enqueue('test@mailtrap.com', $data, $options);
         */
 
+        $this->viewBuilder()->setLayout('extern');
+        
         $user = $this->Users->newEmptyEntity();
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
