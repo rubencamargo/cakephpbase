@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 
 use App\Controller\AppController;
 use EmailQueue\EmailQueue;
+use Cake\Http\Client;
 //use Cake\Mailer\Mailer;
 
 /**
@@ -113,6 +114,54 @@ class UsersController extends AppController
             $user = $this->Users->patchEntity($user, $this->request->getData());
             $user->role_id = 3;
 
+            // Geoip
+            $http = new Client();
+            //$ip = '161.185.160.93';
+            $clientIp = $this->request->clientIp();
+            $access_key = 'd12feaf54bcf5b9edf3ad592cba4c205';
+            $response = $http->get('http://api.ipapi.com/api/' . $clientIp . '?' . 'access_key=' . $access_key);
+            $response = $response->getJson();
+            //debug($response); die();
+
+            /*$response = [
+                'ip' => '161.185.160.93', 
+                'type' => 'ipv4', 
+                'continent_code' => 'NA', 
+                'continent_name' => 'North America', 
+                'country_code' => 'US', 
+                'country_name' => 'United States', 
+                'region_code' => 'NY', 
+                'region_name' => 'New York', 
+                'city' => 'Manhattan', 
+                'zip' => '10009', 
+                'latitude' => (float) 40.726978302002, 
+                'longitude' => (float) -73.980117797852, 
+                'location' => [
+                    'geoname_id' => (int) 5125771, 
+                    'capital' => 'Washington D.C.', 
+                    'languages' => [
+                        0 => [
+                            'code' => 'en', 
+                            'name' => 'English', 
+                            'native' => 'English',
+                        ],
+                    ], 
+                    'country_flag' => 'https://assets.ipstack.com/flags/us.svg', 
+                    'country_flag_emoji' => '🇺🇸', 
+                    'country_flag_emoji_unicode' => 'U+1F1FA U+1F1F8', 
+                    'calling_code' => '1', 
+                    'is_eu' => false,
+                ],
+            ];*/
+
+            $user->ip_number = $response['ip'];
+            $user->ip_type = $response['type'];
+            $user->ip_country_code = $response['country_code'];
+            $user->ip_country_name = $response['country_name'];
+            $user->ip_city = $response['city'];
+            $user->ip_latitude = $response['latitude'];
+            $user->ip_longitude = $response['longitude'];
+            
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('The user has been saved.'));
 
