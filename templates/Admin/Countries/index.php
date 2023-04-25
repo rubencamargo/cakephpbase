@@ -5,11 +5,13 @@
  */
 ?>
 <div class="countries index content">
-    <?= $this->Html->link(__('New Country'), ['action' => 'add'], ['class' => 'button float-right']) ?>
-    <h3><?= __('Countries') ?></h3>
+    <h3>
+        <?= __('Countries') ?>
+        <?= $this->Html->link(__('New Country'), ['action' => 'add'], ['class' => 'btn btn-sm btn-success']) ?>
+    </h3>
     <div class="table-responsive">
-        <table class="table">
-            <thead>
+        <table class="table table-hover">
+            <thead class="table-secondary">
                 <tr>
                     <th><?= $this->Paginator->sort('id') ?></th>
                     <th><?= $this->Paginator->sort('num_code') ?></th>

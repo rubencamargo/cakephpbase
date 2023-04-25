@@ -5,11 +5,13 @@
  */
 ?>
 <div class="roles index content">
-    <?= $this->Html->link(__('New Role'), ['action' => 'add'], ['class' => 'button float-right']) ?>
-    <h3><?= __('Roles') ?></h3>
+    <h3>
+        <?= __('Roles') ?>
+        <?= $this->Html->link(__('New Role'), ['action' => 'add'], ['class' => 'btn btn-sm btn-success']) ?>
+    </h3>
     <div class="table-responsive">
-        <table class="table">
-            <thead>
+        <table class="table table-hover">
+            <thead class="table-secondary">
                 <tr>
                     <th><?= $this->Paginator->sort('id') ?></th>
                     <th><?= $this->Paginator->sort('name') ?></th>

@@ -68,9 +68,9 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         -->
 
         <main class="main">
-            <div class="container-fluid">
+            <div class="container-fluid p-0">
                 <div class="d-flex flex-row">
-                    <div class="p-3"><?= $this->element('sidebar') ?></div>
+                    <div class=""><?= $this->element('sidebar') ?></div>
                     <div class="p-3">
                         <?= $this->Flash->render() ?>    
                         <?= $this->fetch('content') ?>
