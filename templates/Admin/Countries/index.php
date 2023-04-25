@@ -17,8 +17,10 @@
                     <th><?= $this->Paginator->sort('name') ?></th>
                     <th><?= $this->Paginator->sort('name_caps') ?></th>
                     <th><?= $this->Paginator->sort('iso3_code') ?></th>
+                    <!--
                     <th><?= $this->Paginator->sort('created') ?></th>
                     <th><?= $this->Paginator->sort('modified') ?></th>
+                    -->
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
@@ -31,8 +33,10 @@
                     <td><?= h($country->name) ?></td>
                     <td><?= h($country->name_caps) ?></td>
                     <td><?= h($country->iso3_code) ?></td>
+                    <!--
                     <td><?= h($country->created) ?></td>
                     <td><?= h($country->modified) ?></td>
+                    -->
                     <?= $this->element('actions', ['data' => $country]); ?>
                 </tr>
                 <?php endforeach; ?>
