@@ -8,7 +8,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <?php echo $this->Html->link('<i class="bi-universal-access"></i> ' . 'Roles', '/admin/roles', ['class' => 'nav-link link-light', 'escape' => false]); ?>
+                <?php echo $this->Html->link('<i class="bi-person-vcard"></i> ' . 'Roles', '/admin/roles', ['class' => 'nav-link link-light', 'escape' => false]); ?>
             </li>
             <li class="nav-item">
                 <?php echo $this->Html->link('<i class="bi-people"></i> ' . 'Users', '/admin/users', ['class' => 'nav-link link-light', 'escape' => false]); ?>
