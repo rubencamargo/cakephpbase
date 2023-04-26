@@ -10,12 +10,12 @@
             <h3><?= h($role->name) ?></h3>
             <table class="table">
                 <tr>
-                    <th><?= __('Name') ?></th>
-                    <td><?= h($role->name) ?></td>
-                </tr>
-                <tr>
                     <th><?= __('Id') ?></th>
                     <td><?= $this->Number->format($role->id) ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('Name') ?></th>
+                    <td><?= h($role->name) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Created') ?></th>

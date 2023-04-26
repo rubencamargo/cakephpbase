@@ -10,8 +10,8 @@
             <h3><?= h($user->name) ?></h3>
             <table class="table">
                 <tr>
-                    <th><?= __('Role') ?></th>
-                    <td><?= $user->has('role') ? $this->Html->link($user->role->name, ['controller' => 'Roles', 'action' => 'view', $user->role->id]) : '' ?></td>
+                    <th><?= __('Id') ?></th>
+                    <td><?= $this->Number->format($user->id) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Name') ?></th>
@@ -20,6 +20,10 @@
                 <tr>
                     <th><?= __('Lastname') ?></th>
                     <td><?= h($user->lastname) ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('Role') ?></th>
+                    <td><?= $user->has('role') ? $this->Html->link($user->role->name, ['controller' => 'Roles', 'action' => 'view', $user->role->id]) : '' ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Email') ?></th>
@@ -32,10 +36,6 @@
                 <tr>
                     <th><?= __('Country') ?></th>
                     <td><?= h($user->country) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Id') ?></th>
-                    <td><?= $this->Number->format($user->id) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Created') ?></th>
