@@ -20,7 +20,7 @@
                     echo $this->Form->control('name');
                 ?>
             </fieldset>
-            <?= $this->Form->button(__('Submit')) ?>
+            <?= $this->Form->submit(__('Submit')) ?>
             <?= $this->Form->end() ?>
         </div>
     </div>

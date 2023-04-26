@@ -5,6 +5,5 @@ return [
     'inputSubmit' => '<input class="btn btn-secondary" type="{{type}}"{{attrs}}/>',
     'checkbox' => '<input class="form-check-input mb-3" type="checkbox" name="{{name}}" value="{{value}}"{{attrs}}>',
     'select' => '<select class="form-select mb-3" name="{{name}}"{{attrs}}>{{content}}</select>',
-    //'option' => '<option value="{{value}}"{{attrs}}>{{text}}</option>',
-    'button' => '<option class="btn btn-primary" value="{{value}}"{{attrs}}>{{text}}</option>'
+    //'option' => '<option value="{{value}}"{{attrs}}>{{text}}</option>'
 ];

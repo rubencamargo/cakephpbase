@@ -4,17 +4,17 @@
             <li class="nav-item">
                 <a class="nav-link link-light active" aria-current="page" href="#">
                     <span data-feather="home" class="align-text-bottom"></span>
-                    Dashboard
+                    <i class="bi-speedometer2"></i> Dashboard
                 </a>
             </li>
             <li class="nav-item">
-                <?php echo $this->Html->link('Roles', '/admin/roles', ['class' => 'nav-link link-light']); ?>
+                <?php echo $this->Html->link('<i class="bi-universal-access"></i> ' . 'Roles', '/admin/roles', ['class' => 'nav-link link-light', 'escape' => false]); ?>
             </li>
             <li class="nav-item">
-                <?php echo $this->Html->link('Users', '/admin/users', ['class' => 'nav-link link-light']); ?>
+                <?php echo $this->Html->link('<i class="bi-people"></i> ' . 'Users', '/admin/users', ['class' => 'nav-link link-light', 'escape' => false]); ?>
             </li>
             <li class="nav-item">
-                <?php echo $this->Html->link('Countries', '/admin/countries', ['class' => 'nav-link link-light']); ?>
+                <?php echo $this->Html->link('<i class="bi-flag"></i> ' . 'Countries', '/admin/countries', ['class' => 'nav-link link-light', 'escape' => false]); ?>
             </li>
         </ul>
     </div>

@@ -35,7 +35,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 
         <?php //echo $this->Html->css(['normalize.min', 'milligram.min', 'cake']) ?>
         
-        <?= $this->Html->css(['bootstrap/bootstrap.min', 'styles']) ?>
+        <?= $this->Html->css(['bootstrap/bootstrap.min', 'bootstrap-icons-1.10.4/bootstrap-icons', 'styles']) ?>
 
         <?= $this->Html->script(['jquery-3.6.4.min', 'bootstrap/bootstrap.bundle.min', 'scripts'], ['block' => 'js']) ?>
 
