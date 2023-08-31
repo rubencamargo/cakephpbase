@@ -16,7 +16,7 @@
     <div class="column-responsive column-80">
         <div class="users form content">
             <?= $this->Form->create($user, ['type' => 'file']) ?>
-            <fieldset>
+            
                 <legend><?= __('Edit User') ?></legend>
                 <?php
                     //echo $this->Form->control('role_id', ['options' => $roles]);
@@ -25,10 +25,12 @@
                     echo $this->Form->control('email', ['readonly' => 'readonly']);
                     echo $this->Form->control('phone');
                     echo $this->Form->control('password', ['value' => '']);
-                    echo $this->Form->control('picture', ['type' => 'file']);
+                    echo $this->Form->control('picture', ['type' => 'file', 'class' => 'form-control']);
                 ?>
-            </fieldset>
-            <?= $this->Form->button(__('Submit')) ?>
+
+                <br />
+
+                <?= $this->Form->submit(__('Submit')) ?>
             <?= $this->Form->end() ?>
         </div>
     </div>

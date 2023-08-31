@@ -28,6 +28,20 @@
         <li class="nav-item">
           <a class="nav-link disabled">Disabled</a>
         </li>
+        <li class="nav-item d-flex">
+        <?php
+        if ($this->request->getSession()->check('Auth')) {
+            echo $this->Html->link($this->request->getSession()->read('Auth.name') . ' ' . $this->request->getSession()->read('Auth.lastname'), ['prefix' => 'Admin', 'controller' => 'Users', 'action' => 'profile'], ['class' => 'nav-link']);
+        }
+        ?>
+        </li>
+        <li class="nav-item d-flex">
+        <?php
+        if ($this->request->getSession()->check('Auth')) {
+            echo $this->Html->link("Logout", ['prefix' => 'Admin', 'controller' => 'Users', 'action' => 'logout'], ['class' => 'nav-link']);
+        }
+        ?>
+        </li>
       </ul>
       <!--
       <form class="d-flex" role="search">
