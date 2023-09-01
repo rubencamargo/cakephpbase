@@ -8,9 +8,7 @@
     
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
+        <!--
         <li class="nav-item">
           <a class="nav-link" href="#">Link</a>
         </li>
@@ -28,20 +26,22 @@
         <li class="nav-item">
           <a class="nav-link disabled">Disabled</a>
         </li>
+        -->
+        <?php if ($this->request->getSession()->check('Auth')) { ?>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="<?php echo $this->Url->build('/admin/dashboard', ['fullBase' => true]); ?>">Dashboard</a>
+        </li>
         <li class="nav-item d-flex">
         <?php
-        if ($this->request->getSession()->check('Auth')) {
             echo $this->Html->link($this->request->getSession()->read('Auth.name') . ' ' . $this->request->getSession()->read('Auth.lastname'), ['prefix' => 'Admin', 'controller' => 'Users', 'action' => 'profile'], ['class' => 'nav-link']);
-        }
         ?>
         </li>
         <li class="nav-item d-flex">
         <?php
-        if ($this->request->getSession()->check('Auth')) {
             echo $this->Html->link("Logout", ['prefix' => 'Admin', 'controller' => 'Users', 'action' => 'logout'], ['class' => 'nav-link']);
-        }
         ?>
         </li>
+        <?php } ?>
       </ul>
       <!--
       <form class="d-flex" role="search">
